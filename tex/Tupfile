@@ -1,0 +1,24 @@
+ifndef BUILD_PDF
+ifndef BUILD_PS
+error You need to setup the variants for building the paper. Run "tup variant configs/*" to generate the variants.
+endif
+endif
+
+ifdef BUILD_PDF
+
+: paper.tex | ../figs/<figsgroup> ../images/<imagesgroup> *.cls *.bib |> \
+^ pdflatex ^ \
+pdflatex -jobname=@(PAPER_NAME) %f; bibtex @(PAPER_NAME); pdflatex -jobname=@(PAPER_NAME) %f; pdflatex -jobname=@(PAPER_NAME) %f  |> \
+@(PAPER_NAME).pdf | @(PAPER_NAME).aux @(PAPER_NAME).bbl @(PAPER_NAME).blg @(PAPER_NAME).log @(PAPER_NAME).out
+
+endif
+
+
+ifdef BUILD_PS
+
+: paper.tex | ../figs/<figspsgroup> ../images/<imagespsgroup> *.cls *.bib |> \
+^ pslatex ^ \
+latex %f; bibtex %B; latex %f; latex %f; dvips %B.dvi -o %o |> \
+paper.ps | paper.aux paper.bbl paper.blg paper.log paper.out paper.dvi
+
+endif
