@@ -105,6 +105,7 @@
 
 \title{My Title of Wonder}
 
+\begin{comment}
 % AUTHOR STYLE 1
 \author{
  \alignauthor{Author 1, Author 2, and Author 3}\\
@@ -113,20 +114,46 @@
  \affaddr{Ann Arbor, MI 48109}\\
  \email{\{uniqname1,uniqname2,uniqname3\}@umich.edu}
 }
-
-% AUTHOR STYLE 2
-\begin{comment}
-\author{
-\begin{tabular}{cc}
-  \multicolumn{2}{c}{Author 1$^\dagger$, Author 2$^\dagger$, Author 3$^\dagger$, Author 4$^\ddagger$, and Author 5$^\dagger$\vspace{0.3cm}} \\
-  \affaddr{$^\dagger$Computer Science \& Engineering Division} & \affaddr{$^\ddagger$Electrical and Computer Engineering Dept} \\
-  \affaddr{University of Michigan} & \affaddr{Diff School}\\
-  \affaddr{Ann Arbor, MI 48109} & \affaddr{Diff Address}\\
-  \affaddr{\{u1,u2,u3,u4\}@eecs.umich.edu} & \affaddr{diffemail@email.com} \\
-\end{tabular}
-}
 \end{comment}
 
+% AUTHOR STYLE 2
+\author{
+\begin{tabular}{ccc}
+  \multicolumn{3}{c}{
+    Pat Pannuto$^\dagger$, Bradford Campbell$^\dagger$,
+    Michael Anderson$^\ddagger$,
+    Amit Levy$^\S$, Tom Bauer$^\S$, Amit Levy$^\S$,
+  } \\
+  \multicolumn{3}{c}{
+    Phillip Levis$^\S$, David Culler$^\ddagger$, and Prabal Dutta$^\dagger$\vspace{0.3cm}
+  } \\
+  %
+  \affaddr{$^\dagger$Computer Science \& Engineering} &
+  \affaddr{$^\ddagger$Computer Science \& Engineering} &
+  \affaddr{$^\S$Computer Science \& Engineering} \\
+  %
+  \affaddr{University of Michigan} &
+  \affaddr{University of California, Berkeley} &
+  \affaddr{Stanford University} \\
+  %
+  \affaddr{Ann Arbor, MI 48109} &
+  \affaddr{Berkeley, CA 94720} &
+  \affaddr{Stanford, CA 94305} \\
+  %
+  \affaddr{\{ppannuto,bradjc,prabal\}@umich.edu} &
+  \affaddr{\{m.anderson,culler\}@berkeley.edu} &
+  \affaddr{\{levya,tbauer01,pal\}@stanford.edu} \\
+\end{tabular}
+}
+
+% Michael Andersen <m.andersen@eecs.berkeley.edu> 
+% Patrick Pannuto <ppannuto@umich.edu> 
+% Brad Campbell <bradjc@umich.edu> 
+% Amit Levy <levya@cs.stanford.edu> 
+% Tom Bauer <tbauer01@stanford.edu> 
+% Philip Levis <pal@cs.stanford.edu> 
+% Prabal Dutta <prabal@eecs.umich.edu> 
+% David Culler <culler@berkeley.edu> 
 
 \conferenceinfo{Submitted to: SenSys'14}{November 3--6, 2014, Memphis, TN, USA}
 \CopyrightYear{2014}
