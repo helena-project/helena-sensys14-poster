@@ -103,7 +103,7 @@
 
 \begin{document}
 
-\title{My Title of Wonder}
+\title{Hardware and Software for Post-Mote Networked Systems}
 
 \begin{comment}
 % AUTHOR STYLE 1
@@ -175,17 +175,21 @@
 
 \newpage
 
+%% SUBMISSION INSTRUCTIONS
+%% Posters must be submitted as a single PDF containing no more than 3 pages. The
+%% first two pages should contain an abstract describing the research content of
+%% the poster, along with title, authors, institutional affiliations and contact
+%% information. The third page should contain a thumbnail draft of the poster’s
+%% contents.
+
 % page limit          % 2
 % abstract            % 0.5 pg
 \vfill\eject
 \input{intro}         % 0.5 pg
-\input{related}       % 2.0 pg
-\input{overview}      % 0.5 pg
-\input{design}        % 3.0 pg
-\input{eval}          % 4.0 pg
-\input{disc}          % 0.5 pg
-\input{conc}          % 0.25 pg
-\input{ack}           % 0.25 pg
+\input{landscape}     % 0.5 pg
+\input{arch}          % 0.25 pg
+\input{status}        % 0.15 pg
+%references           % 0.10 pg
 
 %Uncomment this line if your paper has / uses end notes
 %\theendnotes
@@ -196,7 +200,13 @@
 \bibliography{bib}
 }
 
-
+\clearpage
+\begin{figure*}
+  \centering
+  \includegraphics[width=\linewidth]{placeholder}
+  \caption{Poster Thumbnail}
+  \label{fig:poster-thumbnail}
+\end{figure*}
 
 
 \end{document}
