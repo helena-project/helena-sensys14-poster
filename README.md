@@ -1,5 +1,10 @@
-This is the tup template for papers:
-http://gittup.org/tup/
+For people who already have a Latex environment setup:
+------------------------------------------------------
+
+1. Install `tup`: http://gittup.org/tup/
+   * mac: `port install tup` will work
+   * linux users must add a ppa or build from source
+2. Type `tup` to build the paper
 
 Installation
 ============
