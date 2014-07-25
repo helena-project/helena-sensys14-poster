@@ -1,22 +1,28 @@
 \section{Technology Today}
+We begin by looking at issues, changes, and trends in current and upcoming components.
 
-\subsection{TinyOS + BLE}
+\subsection{TinyOS versus Bluetooth Low Energy}
 
 The majority of BLE stacks provided by chip manufacturers expect them to be
 implemented in embedded systems that follow some variation of the sequential
-programming model.  TinyOS is an event driven system designed for low power
-embedded electronics and recent work has done to adapt the Nordic BLE stack to
-work in this environment. The quickest integration of these two required
-making TinyOS’s event driven programming model function sequentially.  TinyOS
-was not designed to incorporate large sequential software abstractions, such
-as the Nordic BLE stack, and this resulted in numerous inefficiencies.  The
-question remains if these inefficiencies could be eliminated in a sequential
-system that is as versatile as TinyOS.  Also, it is possible that a stack
-constructed from the ground up that leveraged event driven programming and BLE
-technology could result in an embedded system more efficient than the
-manufacturer provided software implementations.  BLE is an excellent
-technology to be used in embedded systems but integrating TinyOS with stacks
-provided by manufactures is not sustainable nor ideal for future research.
+programming model. TinyOS is an event driven system designed for low power
+embedded electronics. Recent work sought to adapt the Nordic BLE stack to
+work in this environment and found that the quickest integration of these two required
+making TinyOS's event driven programming model function sequentially. As TinyOS
+was not designed to incorporate large sequential software abstractions this
+resulted in numerous inefficiencies. While an event-driven stack written from
+the ground up may be able to overcome these, finding a means to integrate
+TinyOS with manufacturer-provided software stacks is a requirement to enable
+more widespread adoption of the platform.
+
+% The question remains open whether a sequential
+% system with the same versatility as TinyOS could eliminate these
+% inefficiencies.  Also, it is possible that a stack
+% constructed from the ground up that leveraged event driven programming and BLE
+% technology could result in an embedded system more efficient than the
+% manufacturer provided software implementations.  BLE is an excellent
+% technology to be used in embedded systems but integrating TinyOS with stacks
+% provided by manufactures is not sustainable nor ideal for future research.
 
 \subsection{Cortex M0--M4}
 
