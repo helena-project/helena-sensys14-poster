@@ -1,0 +1,79 @@
+\section{Technology Today}
+
+\subsection{TinyOS + BLE}
+
+The majority of BLE stacks provided by chip manufacturers expect them to be
+implemented in embedded systems that follow some variation of the sequential
+programming model.  TinyOS is an event driven system designed for low power
+embedded electronics and recent work has done to adapt the Nordic BLE stack to
+work in this environment. The quickest integration of these two required
+making TinyOS’s event driven programming model function sequentially.  TinyOS
+was not designed to incorporate large sequential software abstractions, such
+as the Nordic BLE stack, and this resulted in numerous inefficiencies.  The
+question remains if these inefficiencies could be eliminated in a sequential
+system that is as versatile as TinyOS.  Also, it is possible that a stack
+constructed from the ground up that leveraged event driven programming and BLE
+technology could result in an embedded system more efficient than the
+manufacturer provided software implementations.  BLE is an excellent
+technology to be used in embedded systems but integrating TinyOS with stacks
+provided by manufactures is not sustainable nor ideal for future research.
+
+\subsection{Cortex M0--M4}
+
+Low energy Cortex M3/M4 microcontrollers provide a new alternative for
+networked embedded systems and have three distinctive characteristics. The
+first is that they are significantly more computationally powerful - the
+appearance of a more powerful processor is not particularly surprising,
+although it may significantly expand the domain of problems that can be solved
+by a 'mote'.
+
+The second distinguishing characteristic is that these microcontrollers
+feature significantly more peripherals than previous generation 8/16 bit
+microcontrollers. These can offer elegant solutions to application problems
+and dramatically increase performance per joule. In order to still meet low
+power targets, however, these microcontrollers have very complex power
+management and peripheral configuration mechanisms. While these are fairly
+easy to configure and abstract if energy usage is not a concern, as in most
+Arduino-type systems, optimal energy usage requires a very close coupling
+between the dynamically changing application states and the peripheral
+configuration. This close coupling is difficult to reconcile with the goal of
+an embedded operating system that presents a simple environment for powerful
+application programming to novice users.
+
+A final characteristic is that the increase in DMA channels combined with the
+ability to configure peripheral events to asynchronously trigger other
+peripherals and DMA transfers allows experienced programmers to implement
+important parts of application logic with no CPU cycles - which can
+drastically reduce the time that the CPU is spent awake. The configuration of
+such functionality is fairly hardware specific and the question of how to
+automatically use this functionality or present it to novice programmers in an
+easy to use form is challenging.
+
+\subsection{Impact of Energy Harvesting}
+
+A decade of research in energy-harvesting transducers, efficient power
+conversion electronics, and compact energy storage technologies, when coupled
+with reductions in the idle and active power of radios,
+instant-on/instant-write phase-change memory, and improvements to the
+boot-time of microcontrollers, make compact energy-harvesting sensors that can
+run perpetually, even in many indoor settings, a reality.  Today, it is
+possible to obtain temperature, humidity, or light levels every minute or two,
+under dimly lit conditions, using indoor photovoltaics that occupy a mere 2-3
+cm2.  It is possible to build an energy-harvesting energy meter that measures
+real power in a form factor no larger than a clip-on split-core current
+transformer.
+
+However, writing applications for such intermittently-powered,
+energy-harvesting systems is a challenge.  It requires revisiting many
+assumptions about system startup, maintaining state across activation cycles,
+discovering and communicating with neighbors, predicting future energy
+availability, and scheduling operations under energy uncertainty.  One way to
+circumvent some of the challenges is to grossly over provision the energy
+harvesting power supply in an attempt to mask the energy intermittency and all
+that dealing with it entails.  But this drives up size and cost, and it cannot
+fully mitigate the variability inherent in energy-harvesting operation.  A
+different path exposes the variability, perhaps through richer power supply
+interfaces, to the system software which can then context switch on time or
+energy quanta, and manage continuations across activations by leveraging fast
+and efficient context storage and restoration.
+

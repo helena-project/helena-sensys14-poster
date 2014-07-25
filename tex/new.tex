@@ -1,0 +1,52 @@
+\section{A New Platform, Hardware and Software}
+
+The next generation mote will reflect the diversity and flexibility that comes
+with a more mature field. Its processor will be more capable with more memory,
+yet at an equal or lower power budget. Its radio will be more flexible,
+incorporating basic SDR-like features and exposing more control over link and
+MAC operation. While wired I/O has not changed much yet in recent years,
+next-next generation hardware anticipates a need for a new
+interconnect~\cite{m3}, and looking forward towards these kind of interfaces
+will aide long-term viability.
+
+With next generation hardware must come next generation software. As TinyOS 2
+built on the foundations of TinyOS 1, time and experience have identified
+fundamental concepts to re-think and re-build the next
+generation~\cite{tinyos-retrospective}. Some key improvements we believe are
+necessary to focus on are: i) improving the developer experience, potentially
+incorporating non-traditional design tools to assist
+programmers~\cite{brown-bubbles}, ii) adding advanced constructs like C\#'s
+await* that ease reasoning about complex intertwined events, iii) developing
+better “operating system”-like behavior, better isolating application
+developers from resource contention and exposing interfaces that permit
+higher-level application logic to be written in friendly, easier languages
+(e.g. a syscall interface), and iv) deepening community and industry
+involvement, starting with building stronger ties and buy-in from people
+already invested in the embedded ecosystem and then looking towards enabling
+usability by true novices, much as Arduino and other upcoming platforms do
+today.
+
+% [as written, this misses some of the higher-level ideas from Phil’s e-mail;
+% network bridging, advanced storage, peripheral management, etc]
+% 
+% MPA: I think point iii can be expanded. We want to isolate the user from the
+% complexities of writing ‘correct’ event-driven software, and having decent
+% communication capabilities - which I think was one of the original goals of
+% TinyOS - but we also now want to isolate users from the complexities of
+% dealing with advancing hardware. Users enjoy Arduino because you don’t need to
+% fiddle with registers to get things to work, if we can offer a level of
+% abstraction such that users can make low-energy applications on
+% high-performance systems, it would be great.
+% 
+% *Pat: This is something I’ve been thinking about for a long time. It makes
+% writing event-driven code much easier to reason about and I think it is
+% possible to build into something like this into TinyOS / nesC and I think I
+% know how to do it. I would love to sit down and chat with someone about this
+% some time.
+% 
+% 
+% people don’t want to build custom hw all the time; mote needs to be future
+% proof. Work today even uses telosBs because they can and they’re available
+% (well, ish, harder to buy now).
+% 
+

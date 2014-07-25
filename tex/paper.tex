@@ -2,7 +2,7 @@
 \pdfminorversion=4
 
 % Change to use the correct class file for your paper.
-\documentclass[10pt,preprint]{sensys-proc}
+\documentclass[10pt,preprint,abstract]{sensys-proc}
 
 %\pagenumbering{arabic}
 
@@ -103,18 +103,16 @@
 
 \begin{document}
 
-\title{Hardware and Software for Post-Mote Networked Systems}
+\title{A Platform for Embedded Networked Systems in the Post-Mote Era}
 
-\begin{comment}
-% AUTHOR STYLE 1
-\author{
- \alignauthor{Author 1, Author 2, and Author 3}\\
- \affaddr{Electrical Engineering and Computer Science Department}\\
- \affaddr{University of Michigan}\\
- \affaddr{Ann Arbor, MI 48109}\\
- \email{\{uniqname1,uniqname2,uniqname3\}@umich.edu}
-}
-\end{comment}
+%% % AUTHOR STYLE 1
+%% \author{
+%%  \alignauthor{Author 1, Author 2, and Author 3}\\
+%%  \affaddr{Electrical Engineering and Computer Science Department}\\
+%%  \affaddr{University of Michigan}\\
+%%  \affaddr{Ann Arbor, MI 48109}\\
+%%  \email{\{uniqname1,uniqname2,uniqname3\}@umich.edu}
+%% }
 
 % AUTHOR STYLE 2
 \author{
@@ -173,8 +171,6 @@
 % \keywords{Mobile phones, Energy harvesting, Phone peripherals, Audio
 %   communications, Participatory sensing}
 
-\newpage
-
 %% SUBMISSION INSTRUCTIONS
 %% Posters must be submitted as a single PDF containing no more than 3 pages. The
 %% first two pages should contain an abstract describing the research content of
@@ -184,11 +180,12 @@
 
 % page limit          % 2
 % abstract            % 0.5 pg
-\vfill\eject
+%\vfill\eject
 \input{intro}         % 0.5 pg
-\input{landscape}     % 0.5 pg
-\input{arch}          % 0.25 pg
-\input{status}        % 0.15 pg
+\input{technology}
+\input{applications}
+\input{new}
+\input{conc}
 %references           % 0.10 pg
 
 %Uncomment this line if your paper has / uses end notes

@@ -1,0 +1,35 @@
+\section{Applications Today}
+
+\subsection{How Applications Drive Platforms}
+
+\glipsum[1-2]
+
+\subsection{Privacy and Proximity in Networks}
+
+Interactions between personal area networks (centered around a user’s mobile
+phone) and proximity applications such as iBeacons happen in public, with
+never-seen-before peers. This presents a dual security and privacy problem. On
+the one hand, connections between the PAN and proximity device must be
+confidential and authentic -- e.g., in a point-of-sale application, the person
+behind me in line should not be able to read my credit-card information or
+make purchases on my behalf. On the other hand, casual interactions with
+proximity devices must not enable ubiquitous tracking of users. Unfortunately,
+confidential and authentic communication and anonymity are difficult to
+achieve simultaneously.
+
+Operating systems can play a role in addressing these issues by coordinating
+security features in the BLE stack with application specific knowledge. For
+example, we propose a new mechanism -- Address Isolation -- that leverages
+Resolvable Private Addresses in BLE to expose multiple private identities from
+the same end-user device. Resolable Private Addresses are BLE device addresses
+derived from a public random value and a shared secret between peers. This
+allows peers to identify each other through addresses that appear random to
+nearby devices that do not share the secret. Address Isolation uses this BLE
+mechanism to expose multiple identities (each resolvable by, e.g. a single
+point-of-sale operator, but anonymous to everyone else) at the OS level, by
+coordinating when each identity should be used with applications. For example,
+in the point-of-sale scenario, the application loads a shared secret key with
+a point-of-sale operator (e.g. Wal-Mart) at application install time, and
+tells the operating system to use the identity based on that key upon user
+interaction, such as initiating a payment.
+
