@@ -9,18 +9,20 @@ next-next generation hardware anticipates a need for a new
 interconnect~\cite{kuo14mbus}, and looking forward towards these kind of
 interfaces will aide long-term viability.
 
-With next generation hardware must come next generation software. As TinyOS 2
-built on the foundations of TinyOS 1, time and experience have identified
-fundamental concepts to re-think and re-build the next
-generation~\cite{tinyos-retrospective}. Some key improvements we believe are
+Time and experience have identified fundamental concepts to re-think and
+re-build for the next generation embedded operating
+system~\cite{tinyos-retrospective}. Some key improvements we believe are
 necessary to focus on are: i) improving the developer experience, potentially
 incorporating non-traditional design tools to assist
 programmers~\cite{brown-bubbles}, ii) adding advanced constructs like C\#'s
-await* that ease reasoning about complex intertwined events, iii) developing
-better “operating system”-like behavior, better isolating application
+await that enables sequential reasoning in an event-driven model, iii) developing
+better ``operating system''-like behavior, better isolating application
 developers from resource contention and exposing interfaces that permit
 higher-level application logic to be written in friendly, easier languages
-(e.g. a syscall interface), and iv) deepening community and industry
+(e.g. a syscall interface), iv) expanding the operating system (or libraries)
+to provide more simple, less flexible, and more feature complete utilities
+like networking, without sacrificing the research community's capability to
+explore, and v) deepening community and industry
 involvement, starting with building stronger ties and buy-in from people
 already invested in the embedded ecosystem and then looking towards enabling
 usability by true novices, much as Arduino and other upcoming platforms do
@@ -37,6 +39,8 @@ today.
 % fiddle with registers to get things to work, if we can offer a level of
 % abstraction such that users can make low-energy applications on
 % high-performance systems, it would be great.
+%
+% --> I think I address this better now across iii and iv
 % 
 % *Pat: This is something I’ve been thinking about for a long time. It makes
 % writing event-driven code much easier to reason about and I think it is
