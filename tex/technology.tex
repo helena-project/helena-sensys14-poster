@@ -10,21 +10,22 @@ new implications on how an OS should manage activity, security, and privacy.
 
 \smallskip\noindent
 \textbf{Integrating TinyOS and Bluetooth Low Energy.}
-
 BLE provides highly efficient beaconing,
 bidirectional communication, fast device discovery, authentication, and
 optional pico-network formation and management~\cite{ble-overview}.
 BLE explicitly incoporates ideas of periodic beacons and duty cycles,
 such that a device with a wakeup latency of a second can have
-an average current draw of $< 40 \mu$A~\cite{nrf8001}.
+an average current draw of $< 40$~\uA.\footnote{
+  e.g. Nordic Semiconductor NRF8001.
+}
 %
 Tight timing requirements mean that most chips have tightly
-integrated software stacks that present abstractions such as
-getting and setting application attributes. Furthermore, these software stacks
-assume a threaded, sequential execution model and in our experience,
-simple adaptations are inefficient. Integrating an
-event-driven OS with manufacturer-provided software stacks is a difficult 
-challenge that is critical for a post-mote platform to address.
+integrated software stacks that present limited abstractions such as
+getting and setting attributes. Furthermore, these software stacks
+assume a threaded, sequential execution model that in our experience
+is hard to adapt efficiently to an event-driven paradigm. Integrating an
+event-driven OS with manufacturer-provided software is a
+challenge that a post-mote platform must address.
 
 % The question remains open whether a sequential
 % system with the same versatility as TinyOS could eliminate these
@@ -37,21 +38,26 @@ challenge that is critical for a post-mote platform to address.
 
 \smallskip\noindent
 \textbf{Cortex M0--M4.}
-Low energy ARM Cortex M0--M4 MCUs are significantly more computationally
-powerful and may significantly expand the domain of problems that can be
-solved by a ``mote''.
+Advancement in MCU technology has widened the field of low-power processors
+which now ranges from highly performant cores such as the 1~\uA--30~mA,
+0.5--120~MHz Atmel SAM4S with a Cortex~M4, 2~MB flash, and 160~kB SRAM to
+highly efficient cores such as the 5~nW--10~\uA, 1--8~MHz M3 research
+chips~\cite{lee13modular} with a Cortex~M0 and 16~kB of memory.
 %
-%These MCUs feature notably more peripherals than previous generations,
-%offering elegant solutions to application problems or dramatically increasing
-%performance per joule.
+While the ultra-low power M3 resembles traditional embedded MCUs, for
+the cm-scale domain powerful primitives such as memory management and dynamic
+frequency scaling are becoming available.
 To still meet low power targets, however, these MCUs have very complex power
-management and peripheral configuration mechanisms. While these are fairly
-easy to configure and abstract if energy usage is not a concern, as in most
-Arduino-type systems, optimal energy usage requires a very close coupling
-between dynamically changing application states and peripheral configurations.
-This close coupling is difficult to reconcile with the goal of an embedded
-OS that presents a simple environment for powerful application programming to
-novice users.
+management and peripheral configuration mechanisms.
+The post-mote OS will need to devise new means to efficiently abstract %(near)
+optimal power management for these more complex chips and leverage the new
+features when available without sacrificing its utility for less feature-rich,
+constrained systems.
+
+% While these are fairly
+% easy to configure and abstract if energy usage is not a concern, as in most
+% Arduino-type systems, optimal energy usage requires a very close coupling
+% between dynamically changing application states and peripheral configurations.
 
 % Interesting and fair point, but more on the systems side than the MCU, which
 % is the discussion here (and we only have 2 pages..)
@@ -86,7 +92,7 @@ However, writing applications for intermittently-powered,
 energy-harvesting systems is a challenge.  It requires revisiting many
 assumptions about system startup, maintaining state across activation cycles,
 discovering and communicating with neighbors, predicting future energy
-availability, and scheduling operations under energy uncertainty.
+availability, and scheduling operations under energy uncertainty~\cite{dewdrop}.
 %
 Deriving clearer power state and availability semantics, and a means to express
 what state needs to be saved, present new embedded OS challenges.
