@@ -10,19 +10,21 @@ new implications on how an OS should manage activity, security, and privacy.
 
 \smallskip\noindent
 \textbf{Integrating TinyOS and Bluetooth Low Energy.}
+
 BLE, at lower power than 802.15.4, enables highly efficient beaconing,
 bidirectional communication, fast device discovery, authentication, and
 optional pico-network formation and management~\cite{ble-overview}.
 %
-The majority of BLE software stacks provided by chip manufacturers, however, expect them to be
-implemented in embedded systems that follow some variation of the sequential
-programming model whereas TinyOS is an event driven system designed for low power
-embedded electronics. Recent work to adapt the Nordic BLE stack found that the
-quickest integration required making TinyOS's event driven programming model
-function sequentially, resulting in numerous inefficiencies. While a new
-event-driven stack could be developed, finding a means to integrate TinyOS
-with manufacturer-provided software stacks is a requirement to enable more
-widespread adoption of the platform.
+Tight timing requirements mean that most chips have tightly
+integrated software stacks that present abstractions well above 
+the level of link-layer frames. Furthermore, these software stacks
+assume a threaded, sequential execution model. In our efforts to
+adapt to an event-driven execution model well-suited to low-power,
+embedded decices, we found that making potentially interleaved operations
+sequental resulted in numerous inefficiencies. Integrating an
+event-driven OS
+with manufacturer-provided software stacks is a difficult challenge that
+is critical for a platform to address.
 
 % The question remains open whether a sequential
 % system with the same versatility as TinyOS could eliminate these
