@@ -570,7 +570,7 @@
 \def\permission#1{\gdef\@permission{#1}}
 
 \ifabstract
-\def\@permission{Copyright is held by the author/owner(s).}
+\def\@permission{Copyright is held by the authors.}
 \else
 \def\@permission{Permission to make digital or hard copies of all or
   part of this work for personal or classroom use is granted without

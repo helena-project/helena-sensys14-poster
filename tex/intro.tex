@@ -9,7 +9,10 @@ networking, and application design.
 %
 The underlying technology and its potential applications have progressed a
 great deal in the past decade. The Cortex~M series of 32-bit processors
-finally have sleep currents competitive with MSP430 and AVR microcontrollers (MCUs).
+finally have sleep currents competitive with MSP430 and AVR microcontrollers
+(MCUs).\footnote{
+  e.g.\ the NXP LPC11U6X family draws 1~\uA in sleep with active RTC.
+}
 802.15.4 has grown far beyond the closed world of ZigBee, with
 new physical layers for new applications. The recent incorporation of
 Bluetooth Low Energy (BLE) into mobile phones allows ubiquitous sensing networks to
@@ -19,13 +22,12 @@ themselves are orders of magnitude more energy efficient and precise.
 Simultaneously, applications have become much richer. Applications in early
 sensor network research focused on fixed rate, long-term sensing, guiding a
 research agenda of ultra-low power operation and robust multi-hop networking.
-Today, personal area networks (PANs), tethered to a phone, interact with
-proximity networks through iBeacon; intra-vehicle networks connect speakers
-and microphones to a phone; building-area networks share knowledge, like
+Today, personal area networks (PANs), tether to phones and interact with
+proximity networks such as iBeacon; building-area networks share knowledge, like
 occupancy, among security, HVAC, and lighting control.
 In addition, the rise of ``maker culture'' and their platforms and communities
-has led to a level of diversity and accessibility that early research
-platforms simply could not provide.
+(e.g.\ Arduino~\cite{arduino}) has led to a level of diversity and
+accessibility that early research platforms simply could not provide.
 
 We have an explosion of new applications and developers, each with new and challenging
 requirements. We have reached a turning point in hardware, enabling a whole

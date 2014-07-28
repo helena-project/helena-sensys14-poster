@@ -3,19 +3,26 @@ Advancements in three major areas---networking, MCUs, and energy
 harvesting---open new opportunites for networked embedded systems and generate
 new implications on how an OS should manage activity, security, and privacy.
 
+%  Need a sentence in 2 that explains what BLE is/why it's important. I.e.,
+%  iBeacon, it's how mobile devices are going to interact with ubiquitous
+%  computing/proximity sensor networks. Lower power than 802.15.4, etc. There is
+%  no explanation of what it is, instead it jumps to TinyOS considerations.
+
 \smallskip\noindent
 \textbf{Integrating TinyOS and Bluetooth Low Energy.}
-The majority of BLE stacks provided by chip manufacturers expect them to be
+BLE, at lower power than 802.15.4, enables highly efficient beaconing,
+bidirectional communication, fast device discovery, authentication, and
+optional pico-network formation and management~\cite{ble-overview}.
+%
+The majority of BLE software stacks provided by chip manufacturers, however, expect them to be
 implemented in embedded systems that follow some variation of the sequential
-programming model. TinyOS is an event driven system designed for low power
-embedded electronics. Recent work has sought to adapt the Nordic BLE stack to
-work in this environment and found that the quickest integration of these two required
-making TinyOS's event driven programming model function sequentially. As TinyOS
-was not designed to incorporate large sequential software abstractions this
-resulted in numerous inefficiencies. While an event-driven stack written from
-the ground up may be able to overcome these, finding a means to integrate
-TinyOS with manufacturer-provided software stacks is a requirement to enable
-more widespread adoption of the platform.
+programming model whereas TinyOS is an event driven system designed for low power
+embedded electronics. Recent work to adapt the Nordic BLE stack found that the
+quickest integration required making TinyOS's event driven programming model
+function sequentially, resulting in numerous inefficiencies. While a new
+event-driven stack could be developed, finding a means to integrate TinyOS
+with manufacturer-provided software stacks is a requirement to enable more
+widespread adoption of the platform.
 
 % The question remains open whether a sequential
 % system with the same versatility as TinyOS could eliminate these
@@ -28,15 +35,13 @@ more widespread adoption of the platform.
 
 \smallskip\noindent
 \textbf{Cortex M0--M4.}
-Low energy ARM Cortex M0--M4 MCUs provide a new alternative for
-networked embedded systems. They are significantly more computationally
-powerful and while the appearance of a more powerful processor is not
-particularly surprising, it may significantly expand the domain of problems
-that can be solved by a ``mote''.
+Low energy ARM Cortex M0--M4 MCUs are significantly more computationally
+powerful and may significantly expand the domain of problems that can be
+solved by a ``mote''.
 %
-These MCUs feature notably more peripherals than previous generations,
-offering elegant solutions to application problems or dramatically increasing
-performance per joule.
+%These MCUs feature notably more peripherals than previous generations,
+%offering elegant solutions to application problems or dramatically increasing
+%performance per joule.
 To still meet low power targets, however, these MCUs have very complex power
 management and peripheral configuration mechanisms. While these are fairly
 easy to configure and abstract if energy usage is not a concern, as in most
@@ -73,7 +78,7 @@ electronics, and compact energy storage technologies, coupled
 with reductions in the idle and active power of radios,
 instant-on/instant-write phase-change memory, and the efficacy of modern MCUs
 make compact energy-harvesting sensors that can run perpetually, even in
-indoor settings, a reality.
+indoor settings, a reality~\cite{doubledip}.
 %
 However, writing applications for intermittently-powered,
 energy-harvesting systems is a challenge.  It requires revisiting many
@@ -81,7 +86,7 @@ assumptions about system startup, maintaining state across activation cycles,
 discovering and communicating with neighbors, predicting future energy
 availability, and scheduling operations under energy uncertainty.
 %
-Derving clearer power state and availability semantics, and a means to express
+Deriving clearer power state and availability semantics, and a means to express
 what state needs to be saved, present new embedded OS challenges.
 
 %One way to
