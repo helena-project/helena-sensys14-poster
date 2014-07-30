@@ -38,21 +38,25 @@ challenge that a post-mote platform must address.
 
 \smallskip\noindent
 \textbf{Cortex M0--M4.}
-Advancement in MCU technology has widened the field of low-power processors
-which now ranges from highly performant cores such as the 1~\uA--30~mA,
-0.5--120~MHz Atmel SAM4S with a Cortex~M4, 2~MB flash, and 160~kB SRAM to
-highly efficient cores such as the 5~nW--10~\uA, 1--8~MHz M3 research
-chips~\cite{lee13modular} with a Cortex~M0 and 16~kB of memory.
+``Low-power processors'' now includes highly performant cores such as the
+1~\uA--30~mA, 0.5--120~MHz Atmel SAM4S with a 32~bit Cortex~M4, 2~MB flash,
+and 160~kB SRAM.
 %
-While the ultra-low power M3 resembles traditional embedded MCUs, for
-the cm-scale domain powerful primitives such as memory management and dynamic
-frequency scaling are becoming available.
-To still meet low power targets, however, these MCUs have very complex power
-management and peripheral configuration mechanisms.
-The post-mote OS will need to devise new means to efficiently abstract %(near)
-optimal power management for these more complex chips and leverage the new
-features when available without sacrificing its utility for less feature-rich,
-constrained systems.
+Cm-scale chips now support primitives such as memory segmentation and
+dynamic frequency scaling. This presents an opportunity to enhance the
+robustness and capability of embedded OSes, if techniques such as memory
+protection and process isolation can be adapted to the embedded domain of
+tight hardware/software coupling.
+%
+
+New chips are evolving beyond the traditional definiton of MCU.  More diverse
+and capable peripherals, such as encryption co-processors or even pseudo-TPMs
+(e.g. ARM TrustZone), are incorporated on-die as semi-integrated peripherals.
+While they often hang off a shared bus, these peripherals can be separately
+powered, programmed, and can even communicate with one another while the CPU
+core is asleep. The post-mote OS needs to respect this emerging less
+CPU-centric world view and expose a means to efficiently leverage new
+integrated on or off-die peripherals and their capabilities.
 
 % While these are fairly
 % easy to configure and abstract if energy usage is not a concern, as in most

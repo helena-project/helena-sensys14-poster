@@ -10,21 +10,22 @@ these new opportunities.
 \textbf{Human-centric.}
 The mobile device is a gateway to an embedded network. Instead of
 sending data to a fixed collection point, the network can send directly
-to a mobile device, on demand. This enables a person to interact with
-the surrounding devices and infrastructure without needing to know a
-URL or log into a cloud-based system. Proximity networks provide a degree
+to a mobile device, on demand. This enables interaction with
+surrounding devices and infrastructure without needing to know
+URLs or logging into a cloud system. Proximity networks provide a degree
 of basic, physical security that enables opportunistic interactions.
-You can walk into a room, turn on its lights, ask it how long it is free for,
-and see what other rooms are free.
+%You can walk into a room, turn on its lights, ask it how long it is free for,
+%and see what other rooms are free.
 
 Because these interactions are human-centric, they require low latency and
 are highly bursty -- two performance properties unimportant in the
 dominant network model of the past decade. These low-latency interactions
 are more than event notifications or alarms. They can involve significant
-queries and exchanges of data. Furthermore, becuase they involve mobile
+queries and exchanges of data. Furthermore, because they involve mobile
 devices, existing approaches of long-term link estimation are of limited use.
-These new application requirements will force us to rethink the tradeoffs
-between latency, storage, energy, snooping, and how an OS will support them.
+These new application requirements require new communication abstractions,
+rethinking the tradeoffs between latency, storage, energy, snooping, and how
+an OS will support them.
 
 \smallskip\noindent
 \textbf{Perpetual Networks.}
@@ -34,13 +35,12 @@ iBeacons and smoke detectors that need no battery replacements. If the world
 will be filled with thousands of smart objects per person, energy must recede
 to be a non-issue for almost all of them.
 
-We cannot
-predict the performance of a solar cell. This means an operating system
+We cannot predict the performance of a solar cell. This means an OS
 is stuck between two big unknowns: the future energy available as well as
 the potential energy needs from bursty, human-centric interactions. For
-an embedded device to be truly perpetual, it must scale its behavior and
-perfomance based on these two factors, optimizing how it uses its energy
-as needed.
+an embedded device to be truly perpetual, there must be platform support to
+scale behavior and performance based on these two factors, optimizing needs,
+wants, and energy use.
 
 \smallskip\noindent
 \textbf{Privacy and Proximity in Networks.}
