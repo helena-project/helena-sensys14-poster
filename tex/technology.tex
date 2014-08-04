@@ -23,9 +23,16 @@ Tight timing requirements mean that most chips have tightly
 integrated software stacks that present limited abstractions such as
 getting and setting attributes. Furthermore, these software stacks
 assume a threaded, sequential execution model that in our experience
-is hard to adapt efficiently to an event-driven paradigm. Integrating an
-event-driven OS with manufacturer-provided software is a
-challenge that a post-mote platform must address.
+is hard to adapt efficiently to an event-driven paradigm. 
+%
+Finally, the current BLE model of embedded device coupled with a
+mobile app is built in the image of an application layer gateway,
+rather than an end-to-end addressable network elements, greatly
+limiting the application space.
+
+%Integrating an
+%event-driven OS with manufacturer-provided software is a
+%challenge that a post-mote platform must address.
 
 % The question remains open whether a sequential
 % system with the same versatility as TinyOS could eliminate these
@@ -54,9 +61,14 @@ and capable peripherals, such as encryption co-processors or even pseudo-TPMs
 (e.g. ARM TrustZone), are incorporated on-die as semi-integrated peripherals.
 While they often hang off a shared bus, these peripherals can be separately
 powered, programmed, and can even communicate with one another while the CPU
-core is asleep. The post-mote OS needs to respect this emerging less
-CPU-centric world view and expose a means to efficiently leverage new
-integrated on or off-die peripherals and their capabilities.
+core is asleep. Emerging platforms must provide expressive methods to leverage
+the growing set of capable heterogenous resources beyond the CPU, both on- and
+off-die.
+
+%% The post-mote OS needs to respect this emerging less
+%% CPU-centric world view and expose a means to efficiently leverage new
+%% integrated on or off-die peripherals and their capabilities.
+
 
 % While these are fairly
 % easy to configure and abstract if energy usage is not a concern, as in most
