@@ -27,8 +27,8 @@ is hard to adapt efficiently to an event-driven paradigm.
 %
 Finally, the current BLE model of embedded device coupled with a
 mobile app is built in the image of an application layer gateway,
-rather than an end-to-end addressable network elements, greatly
-limiting the application space.
+rather than an end-to-end addressable network elements:
+general protocols are an open research question.
 
 %Integrating an
 %event-driven OS with manufacturer-provided software is a
@@ -56,12 +56,13 @@ protection and process isolation can be adapted to the embedded domain of
 tight hardware/software coupling.
 %
 
-New chips are evolving beyond the traditional definiton of MCU.  More diverse
+New chips are evolving beyond the traditional definiton of an MCU.  
+More diverse
 and capable peripherals, such as encryption co-processors or even pseudo-TPMs
 (e.g. ARM TrustZone), are incorporated on-die as semi-integrated peripherals.
 While they often hang off a shared bus, these peripherals can be separately
 powered, programmed, and can even communicate with one another while the CPU
-core is asleep. Emerging platforms must provide expressive methods to leverage
+core is asleep. A platform must provide expressive methods to leverage
 the growing set of capable heterogenous resources beyond the CPU, both on- and
 off-die.
 
