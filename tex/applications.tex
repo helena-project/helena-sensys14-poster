@@ -17,15 +17,16 @@ of basic, physical security that enables opportunistic interactions.
 %You can walk into a room, turn on its lights, ask it how long it is free for,
 %and see what other rooms are free.
 
-Because these interactions are human-centric, they require low latency and
-are highly bursty -- two performance properties unimportant in the
-dominant network model of the past decade. These low-latency interactions
-are more than event notifications or alarms. They can involve significant
-queries and exchanges of data. Furthermore, because they involve mobile
-devices, existing approaches of long-term link estimation are of limited use.
-These new application requirements require new communication abstractions,
-rethinking the tradeoffs between latency, storage, energy, snooping, and how
-an OS will support them.
+Because these interactions are human-centric, they require low latency
+and are highly bursty, two properties unimportant in the dominant
+network model of the past decade. Furthermore, these low-latency
+interactions are more complex than event notifications or alarms. They
+can involve significant queries and exchanges of data. Finally,
+because they involve mobile devices, existing approaches of long-term
+link estimation are of limited use.  These new application
+requirements require new communication abstractions, rethinking the
+tradeoffs between latency, storage, energy, snooping, and how an OS
+will support them.
 
 \smallskip\noindent
 \textbf{Perpetual Networks.}
@@ -44,17 +45,18 @@ wants, and energy use.
 
 \smallskip\noindent
 \textbf{Privacy and Proximity in Networks.}
-Interactions between PANs (centered around a user’s mobile phone)
+Interactions between PANs (centered around a user's mobile phone)
 and proximity applications such as iBeacons happen in public, with
-never-seen-before peers. This presents a dual security and privacy problem. On
+never-seen-before peers. This presents a security and privacy problem. On
 the one hand, connections between the PAN and proximity device must be
-confidential and authentic -- e.g. payments.
+confidential and authentic -- e.g., for payments.
 On the other hand, casual interactions with
 proximity devices must not enable ubiquitous tracking of users. Unfortunately,
 confidential and authentic communication and anonymity are difficult to
 achieve simultaneously.
 %
-Operating systems can play a role in addressing these issues, for example by coordinating
+Operating systems can play a role in addressing these issues, for example 
+by coordinating
 security features in the BLE stack with application specific knowledge.
 
 %% Too detailed an example for a poster abstract
