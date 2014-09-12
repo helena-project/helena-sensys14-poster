@@ -1,5 +1,37 @@
 \section{A New Platform, Hardware and Software}
 
+Today, we propose a preliminary design sketch for a new platform. We envision
+a system built atop a highly capable, yet energy efficient Cortex~M4. To
+support connectivity with both the established low-power wireless technology
+and emerging PANs, our platform will include both 802.15.4 and BLE radios.
+With an eye towards new energy challenges presented by energy harvesting
+designs and recognizing both the importance that fine-grained power
+measurement and control has played in previous work and the pain points for
+performing power research in previous designs, we consider a highly
+instrumented and flexible power network a key design point.
+
+With great power came great complexity. It is time to pare down the
+abstractions in TinyOS to enable easier development and facilitate more
+powerful OS primitives.
+We propose the investigation of techniques for seamlessly handling state
+management through different power states. We envision a predictive power
+service that transparently adapts mote function to current and predicted
+energy availability. We imagine mechanisms for intrinsic awareness of the
+comings, goings, and capabilities of PAN neighbors, including opportunistic
+and privacy-preserving data muling and sharing.
+
+
+This new platform will enable a new generation of wireless and embedded
+research. By capitalizing on a decade of technological improvements, coupled
+with the knowledge gleaned from fifteen years of experimentation on previous
+platforms, we aim to create the foundation for a new class of groundbreaking
+research.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
 %% The next generation mote will reflect the diversity and flexibility that comes
 %% with a more mature field. Its processor will be more capable with more memory,
 %% yet at an equal or lower power budget. Its radio will be more flexible,
@@ -69,3 +101,4 @@ Arduino and other upcoming platforms do today.
 % (well, ish, harder to buy now).
 % 
 
+\end{comment}
