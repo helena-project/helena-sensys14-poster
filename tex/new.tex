@@ -1,31 +1,31 @@
 \section{A New Platform, Hardware and Software}
 
-Today, we propose a preliminary design sketch for a new platform. We envision
-a system built atop a highly capable, yet energy efficient Cortex~M4. To
-support connectivity with both the established low-power wireless technology
-and emerging PANs, our platform will include both 802.15.4 and BLE radios.
-With an eye towards new energy challenges presented by energy harvesting
-designs and recognizing both the importance that fine-grained power
-measurement and control has played in previous work and the pain points for
-performing power research in previous designs, we consider a highly
-instrumented and flexible power network a key design point.
+The first hardware design for the new platform, called \namedevice, has a
+Cortex~M4 processor with many advanced features (memory protection,
+digital signal processing instructions).  To support connectivity with
+both the established low-power wireless technology and emerging PANs,
+\namedevice has both 802.15.4 and BLE radios.  Recognizing both the
+importance that fine-grained power measurement and control has played
+in previous work and the pain points for performing power research in
+previous designs, \namedevice will incorporate a highly instrumented and
+flexible power network.
 
-With great power came great complexity. It is time to pare down the
-abstractions in TinyOS to enable easier development and facilitate more
-powerful OS primitives.
-We propose the investigation of techniques for seamlessly handling state
-management through different power states. We envision a predictive power
-service that transparently adapts mote function to current and predicted
-energy availability. We imagine mechanisms for intrinsic awareness of the
-comings, goings, and capabilities of PAN neighbors, including opportunistic
-and privacy-preserving data muling and sharing.
+The increased complexity of peripherals, power management, and clock
+domains and the needs of new applications
+motivate a new operating system, called \nameos. The \nameos kernel builds
+on the past decade of research to provide stable, simple implementations of
+core abstractions such as IPv6, sensing, and local storage. 
+The core idea and abstraction in \nameos is time -- global time for timestamps,
+local time that stretches and shrinks in response to energy availability, and
+clock source management for efficiency and performance.
+The operating system will enable mechanisms for emerging embedded applications,
+including opportunistic and privacy-preserving data muling and sharing.
 
+In summary, we aim to create a foundation for a new generation of
+groundbreaking research by capitalizing on a decade of technological
+improvements and knowledge gleaned from fifteen years of
+experimentation,
 
-This new platform will enable a new generation of wireless and embedded
-research. By capitalizing on a decade of technological improvements, coupled
-with the knowledge gleaned from fifteen years of experimentation on previous
-platforms, we aim to create the foundation for a new class of groundbreaking
-research.
 
 
 
