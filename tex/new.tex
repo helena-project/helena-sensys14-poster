@@ -1,24 +1,24 @@
 \section{A New Platform, Hardware and Software}
 
-The first hardware design for the new platform, called \namedevice, has a
-Cortex~M4 processor with many advanced features (memory protection,
-digital signal processing instructions).  To support connectivity with
-both the established low-power wireless technology and emerging PANs,
-\namedevice has both 802.15.4 and BLE radios.  Recognizing both the
-importance that fine-grained power measurement and control has played
-in previous work and the pain points for performing power research in
-previous designs, \namedevice will incorporate a highly instrumented and
-flexible power network.
+To begin, we design two complementary hardware platforms. First, \namedevice,
+a full-featured platform with a Cortex~M4 processor with many advanced
+features (memory protection, DSP instructions) to explore novel embedded OS
+concepts, 802.15.4 and BLE radios to support connectivity with both
+established low-power wireless technology and emerging PANs, and a highly
+instrumented and flexible power network to enable fine-grained measurement and
+control. Second, Squall, a price and area-optimized platform for massive
+dissemination and large-scale testing with BLE connectivity that leverages an
+integrated SoC Cortex~M0 for computation.
 
 The increased complexity of peripherals, power management, and clock
 domains and the needs of new applications
-motivate a new operating system, called \nameos. The \nameos kernel builds
+motivate a new operating system: \nameos. The \nameos kernel builds
 on the past decade of research to provide stable, simple implementations of
 core abstractions such as IPv6, sensing, and local storage. 
 The core idea and abstraction in \nameos is time -- global time for timestamps,
 local time that stretches and shrinks in response to energy availability, and
 clock source management for efficiency and performance.
-The operating system will enable mechanisms for emerging embedded applications,
+Tock will enable mechanisms for emerging embedded applications,
 including opportunistic and privacy-preserving data muling and sharing.
 
 In summary, we aim to create a foundation for a new generation of
