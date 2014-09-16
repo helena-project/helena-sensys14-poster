@@ -541,14 +541,13 @@
 %%% caption).
 %%%
 
-%% PAT EDIT: Reduce caption picture height from 1.25 to 0.25
 \newtoks\copyrightnotice
 \def\ftype@copyrightbox{8}
 \def\@copyrightspace{
   \@float{copyrightbox}[b]
   \begin{center}
     \setlength{\unitlength}{1in}
-    \begin{picture}(3.33,0.25) % Space for copyright notice
+    \begin{picture}(3.33,0.50) % Space for copyright notice
       \put(0,0){\normalfont\fontsize{8\p@}{8\p@}\selectfont%
                 {\@toappear}}
     \end{picture}
@@ -568,28 +567,34 @@
 \def\crdata#1{\gdef\@crdata{#1}}
 \def\@crdata{}
 \def\permission#1{\gdef\@permission{#1}}
+\def\doidata#1{\gdef\@doidata{#1}}
+\def\@doidata{}
+\def\crtype#1{\gdef\@crtype{#1}}
+\def\@crtype{}
 
 \ifabstract
-\def\@permission{Copyright is held by the authors.}
+\def\@permission{Permission to make digital or hard copies of part or all of this work is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. \\[0.5em]
+Copyright is held by the authors.}
 \else
-\def\@permission{Permission to make digital or hard copies of all or
-  part of this work for personal or classroom use is granted without
-  fee provided that copies are not made or distributed for profit or
-  commercial advantage and that copies bear this notice and the full
-  citation on the first page. To copy otherwise, to republish, to
-  post on servers or to redistribute to lists, requires prior specific
-  permission and/or a fee.}
+\def\@permission{Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from Permissions@acm.org.}
 \fi
 \def\crdata#1{\gdef\@crdata{#1}}
-\def\@crdata{}
 
 \def\@copyrightinfo{%
-  \ifx\@CopyrightYear\@empty
-  ACM \@crdata
-  \else
-  Copyright \copyright\ \@CopyrightYear\ ACM \@crdata\ ...\$10.00
+  \ifabstract
+    ACM \@crdata. %%% Abstract Copyright
+    \url{http://dx.doi.org/\@doidata}
+   \else
+     \ifx\@CopyrightYear\@empty %%% PARTIAL Copyright
+        Copyright is held by the owner/author(s). 
+        Publication rights licenced to ACM.\\
+        ACM \@crdata\ ...\$15.00 \\
+     \else                      %%% TRADITIONAL Copyright
+        Copyright 2014 ACM \@crdata\ ...\$15.00 \\
+     \fi
+    http://dx.doi.org/\@doidata
   \fi
-  }
+}
 
 \toappear{\scriptsize\@permission\\[-0.5em]\par
 \textsl{\@conferencename} \@conferenceinfo\par\@copyrightinfo}
