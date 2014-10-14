@@ -573,8 +573,8 @@
 \def\@crtype{}
 
 \ifabstract
-\def\@permission{Permission to make digital or hard copies of part or all of this work is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. \\[0.5em]
-Copyright is held by the authors.}
+\def\@permission{Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for third-party components of this work must be honored. For all other uses, contact the Owner/Author. \\[0.5em]
+Copyright is held by the owner/author(s).}
 \else
 \def\@permission{Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from Permissions@acm.org.}
 \fi
@@ -582,7 +582,7 @@ Copyright is held by the authors.}
 
 \def\@copyrightinfo{%
   \ifabstract
-    ACM \@crdata. %%% Abstract Copyright
+    ACM \@crdata. \\ %%% Abstract Copyright
     \url{http://dx.doi.org/\@doidata}
    \else
      \ifx\@CopyrightYear\@empty %%% PARTIAL Copyright
@@ -596,7 +596,7 @@ Copyright is held by the authors.}
   \fi
 }
 
-\toappear{\scriptsize\@permission\\[-0.5em]\par
+\toappear{\fontsize{6pt}{.8em}\selectfont\@permission\\[-0.5em]\par
 \textsl{\@conferencename} \@conferenceinfo\par\@copyrightinfo}
 
 % Theorems
